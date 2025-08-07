@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+  padding: var(--spacing-8);
+  background-color: var(--background);
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--spacing-8);
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.header {
+  text-align: center;
+}
+
+.logo {
+  font-family: var(--font-family-heading);
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--primary);
+  text-decoration: none;
+  display: block;
+  margin-bottom: var(--spacing-4);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: var(--spacing-2);
+  color: var(--muted-foreground);
+  font-size: 1rem;
+}
+
+.testCredentials {
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-4);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: var(--radius);
+  font-family: var(--font-family-monospace);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.testTitle {
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-3);
+}
+
+.testLine {
+  margin: 0;
+  line-height: 1.6;
+  display: flex;
+  justify-content: space-between;
+}
+
+.testLine strong {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.testLine span {
+  color: var(--accent-foreground);
+  word-break: break-all;
+  text-align: right;
+  padding-left: var(--spacing-2);
+}
+
+@media (max-width: 480px) {
+  .loginCard {
+    padding: var(--spacing-6);
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+}

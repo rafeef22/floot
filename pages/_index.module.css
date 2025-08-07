@@ -1,0 +1,210 @@
+.pageContainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  padding: var(--spacing-4) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.heroImage {
+  width: 100%;
+  aspect-ratio: 18 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Section Title */
+.sectionTitle {
+  font-family: var(--font-family-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+}
+
+/* Price Section */
+.priceSection {
+  width: 100%;
+}
+
+.priceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-6);
+}
+
+.priceCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-6);
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--foreground);
+  transition: transform var(--animation-duration-normal) ease, box-shadow var(--animation-duration-normal) ease;
+}
+
+.priceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.priceLabel {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.priceIcon {
+  color: var(--primary);
+  transition: transform var(--animation-duration-fast) ease;
+}
+
+.priceCard:hover .priceIcon {
+  transform: translateX(4px);
+}
+
+/* Featured Section */
+.featuredSection {
+  width: 100%;
+}
+
+.featuredHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.featuredHeader .sectionTitle {
+  margin-bottom: 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.errorState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-8);
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+}
+
+/* Brands Section */
+.brandsSection {
+    text-align: center;
+    overflow: hidden;
+    padding: var(--spacing-8) 0;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+}
+
+.brandsTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-6);
+    display: none;
+}
+
+.brandsReel {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.brandsTrack {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite;
+}
+
+.brandLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 0 var(--spacing-8);
+    filter: grayscale(1);
+    opacity: 0.6;
+    transition: filter var(--animation-duration-normal) ease, opacity var(--animation-duration-normal) ease;
+}
+
+.brandLogo:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.brandText {
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--muted-foreground);
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  /* Hero styles remain the same for larger screens */
+}
+
+@media (max-width: 640px) {
+  .pageContainer {
+    padding: 0 var(--spacing-4);
+    gap: var(--spacing-6);
+    padding-bottom: var(--spacing-6);
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .featuredHeader {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .featuredHeader .sectionTitle {
+    text-align: center;
+  }
+  
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .priceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
